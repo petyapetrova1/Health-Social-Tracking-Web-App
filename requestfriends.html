@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Friends</title>
+
+</head>
+<body>
+    
+    
+  <div class="sidebar">
+    <br></br>
+   
+ <p style="text-align: left; font-size: 20px; margin-top: 10px; ">Приятели</p>
+    <div class="navigation">
+        
+      <ul>
+        <li><a href="friends.html"></span> Всички приятели</a></li>
+        <li><a href="newfriends.html"></span> Наскоро добавени приятели</a></li>
+        <li><a href="acceptfriends.html"></span>Приети покани</a></li>
+        <li><a href="requestfriends.html"></span> Изпратени заявки за приятелство</a></li>
+      </ul>
+    </div>
+
+    <div class="policies">
+      <ul>
+        <li><a href="#">Cookies</a></li>
+        <li><a href="#">Privacy</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="main-container">
+    <div class="topbar">
+     
+      <div class="navbar">
+      
+        <li id="profile-menu">
+            <a href="javascript:void(0)" onclick="togglePopup(event, 'profile-menu')"><span>👤</span></a>
+            <div class="popup-menu" id="profile-menu-popup">
+                <a href="index.html">Профил</a>
+                <a href="editprofile.html">Настройки</a>
+        
+            </div>
+        </li>
+           
+
+        <li id="calendar-menu">
+            <a href="calendar.html"><span>📖</span>
+            </li>
+
+        <li>
+
+            
+            <a href="javascript:void(0)" onclick="togglePopup(event, 'notifications-menu')"><span>🌍</span></a>
+            <div class="popup-menu" id="notifications-menu-popup">
+                <a href="#">Известия</a>
+                <ul class="grid">
+                    <li class="article-container">
+                      <article>М.М. ви хареса снимка</article>
+                    </li>
+                    <li class="article-container">
+                      <article>Н.Д. ви хареса пост</article>
+                    </li>
+                    <li class="article-container">
+                      <article>Е.В. сподели ваш пост</article>
+                    </li>
+                    ...
+                  </ul>
+                  
+                
+            </div>
+        </li>
+
+
+
+
+       <li>
+                <a href="javascript:void(0)" onclick="togglePopup(event, 'favorites-menu')"><span>⭐</span></a>
+                <div class="popup-menu" id="favorites-menu-popup">
+                    <a href="favorite.html">Записани публикации</a>
+                </div>
+            </li>
+        </ul>
+
+
+
+
+
+
+
+
+
+      
+      </div>
+    </div>
+
+    <div class="tests-list">
+      <h2><br>Всички приятели </h2></br>
+      
+      <div class="list">
+        <a href="" class="item">
+          <img src="Rose-Bessie-David-Austin-50cm-1.jpg" alt="Rose">
+          <h4>Rose Dimitrova</h4>
+        </a>
+      
+        <a href="" class="item">
+          <img src="Rose-Bessie-David-Austin-50cm-1.jpg" alt="Emil">
+          <h4>Emil Nikolov</h4>
+        </a>
+      
+        <a href="index2.html" class="item">
+          <img src="best-guard-dogs-1650302456.avif" alt="Martin">
+          <h4>Мартин Петров</h4>
+        </a>
+      </div>
+      
+               
+
+                          
+                              
+              
+        </a>
+      </div>
+      
+      <style>
+        * {
+  padding: 0;
+  margin: 0;
+  
+}
+body {
+    background-color: #f7f1e1;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+
+
+
+
+
+
+.sidebar {
+
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 300px;
+    background-color:  #f0e6d2;
+
+  color:#817e7e;
+  margin-right:50px;
+  padding: 24px;
+  font-weight: bold;
+  border: 2px solid rgb(244, 244, 244);
+  padding: 10px;
+  border-radius: 1px;
+}
+
+  
+
+.sidebar .navigation ul {
+    border-top: 4px ridge;
+  list-style: none;
+  margin-top: 20px;
+  
+
+}
+.sidebar .navigation ul li {
+  padding: 10px 0px;
+  
+  
+  
+}
+.sidebar .navigation ul li a {
+  color:#333333 ;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+
+
+}
+.sidebar .navigation ul li a:hover,
+.sidebar .navigation ul li a:active,
+.sidebar .navigation ul li a:focus {
+  color: #817e7e ;
+}
+.sidebar .navigation ul li a:hover .fa,
+.sidebar .navigation ul li a:active .fa,
+.sidebar .navigation ul li a:focus .fa {
+  color: #b3b3b3;
+}
+.sidebar .navigation ul li .fa {
+  font-size: 20px;
+  margin-right: 10px;
+  color: #817e7e ;
+ 
+}
+.sidebar .navigation ul li a:hover .fa:hover,
+.sidebar .navigation ul li a:hover .fa:active,
+.sidebar .navigation ul li a:hover .fa:focus {
+  color: #ffffff;
+}
+.sidebar .policies {
+  position: absolute;
+  bottom: 100px;
+}
+.sidebar .policies ul {
+  list-style: none;
+}
+.sidebar .policies ul li {
+  padding-bottom: 5px;
+}
+.sidebar .policies ul li a {
+  color: #b3b3b3;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 10px;
+  
+}
+.sidebar .policies ul li a:hover,
+.sidebar .policies ul li a:active,
+.sidebar .policies ul li a:focus {
+  text-decoration: underline;
+}
+
+.main-container {
+  margin-left: 400px;
+  margin-bottom: 100px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #090909;
+  padding: 14px 30px;
+}
+.topbar .prev-next-buttons button {
+  color: #7a7a7a;
+  cursor: not-allowed;
+  width: 34px;
+  height: 34px;
+  border-radius: 100%;
+  font-size: 18px;
+  border: 0px;
+  background-color: #090909;
+  margin-right: 10px;
+}
+.topbar .navbar {
+  display: flex;
+  align-items: center;
+}
+.topbar .navbar ul {
+  list-style: none;
+}
+.topbar .navbar ul li {
+  display: inline-block;
+  margin: 0px 8px;
+  width: 70px;
+}
+.topbar .navbar ul li a {
+  color: #b3b3b3;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+.topbar .navbar ul li a:hover,
+.topbar .navbar ul li a:active,
+.topbar .navbar ul li a:focus {
+  color: #ffffff;
+  font-size: 15px;
+}
+.topbar .navbar ul li.divider {
+  color: #ffffff;
+  font-size: 26px;
+  margin: 0px 20px;
+  width: auto;
+}
+.topbar .navbar button {
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 14px 30px;
+  border: 0px;
+  border-radius: 40px;
+  cursor: pointer;
+  margin-left: 20px;
+}
+.topbar .navbar button:hover,
+.topbar .navbar button:active,
+.topbar .navbar button:focus {
+  background-color: #f2f2f2;
+}
+.tests-list{
+  padding: 20px 40px;
+  
+}
+.tests-list h2 {
+  color: #817e7e ;
+  font-size: 22px;
+  margin-bottom: 20px;
+  font-size: 22px;
+  margin-top: 10px;
+}
+.tests-list .list {
+  display: flex;
+  gap: 20px;
+  overflow: hidden;
+
+}
+.tests-list .list .item {
+  min-width: 140px;
+  width: 160px;
+  padding: 15px;
+ 
+
+  background-color:#f0e6d2  ;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all ease 0.4s;
+}
+.tests-list .list .item:hover {
+  background-color: #f3e0c1;
+}
+.tests-list .list .item img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  margin-right: 100px; 
+}
+.tests-list .list .item .play {
+  position: relative;
+}
+.tests-list .list .item .play .fa {
+  position: absolute;
+  right: 10px;
+  top: -60px;
+  padding: 18px;
+ 
+  border-radius: 100%;
+  opacity: 0;
+  transition: all ease 0.4s;
+}
+.tests-list.list .item:hover .play .fa {
+  opacity: 1;
+  transform: translateY(-20px);
+}
+.tests-list .list .item h4 {
+  color: #817e7e ;
+  font-size: 14px;
+  margin-bottom: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tests-list .list .item p {
+  color: #989898;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 600;
+}
+.tests-list hr {
+  margin: 70px 0px 0px;
+  border-color: #636363;
+}
+
+.preview {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to right, #ae2896, #509bf5);
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.preview h6 {
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.preview p {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+}
+.preview button {
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 14px 30px;
+  border: 0px;
+  border-radius: 40px;
+  cursor: pointer;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+    padding: 5px;
+    margin: 0;
+    background-color: #19b540;
+    position: fixed; 
+    left: 0; 
+    right:0; 
+    top: 0; 
+    width: 100%;
+    z-index: 1000; 
+
+
+}
+
+
+
+.navbar li {
+    margin: 0 15px;
+    position: relative;
+    margin-top: 4px; 
+}
+
+.navbar a {
+    color: white;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+
+.popup-menu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 150px;
+    text-align: left;
+    z-index: 1000;
+}
+
+.popup-menu a {
+    display: block;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.popup-menu a:hover {
+    background-color: #f2f2f2;
+}
+.p{
+    color:lightgray;
+}
+
+
+.search-box { 
+background: #efefef; 
+width: 350px; 
+border-radius: 20px; 
+display: flex; 
+align-items: center; 
+padding: 0 15px;
+}
+
+
+.search-box img{
+width: 40px; 
+}
+
+.search-box input{
+width: 100%; 
+background: transparent; 
+padding: 10px; 
+outline: none; 
+border:0;
+}
+
+
+.tests-list .list .item img {
+  width: 150px; /* Фиксиран размер */
+  height: 150px;
+  object-fit: cover; /* Кадрира снимката */
+  display: block;
+  margin: 0 auto 10px auto; /* центрира и добавя разстояние отдолу */
+}
+
+.tests-list .list .item h4 {
+  text-align: center; /* Текста да е по средата */
+  margin-top: 5px;
+}
+
+
+
+      </style>
+      <script> 
+        function togglePopup(event, popupId) {
+            event.stopPropagation();
+            let popup = document.getElementById(popupId + '-popup');
+            popup.style.display = (popup.style.display === "block") ? "none" : "block";
+        }
+
+        document.addEventListener("click", function(event) {
+            let popups = document.querySelectorAll('.popup-menu');
+            popups.forEach(popup => {
+                if (!popup.contains(event.target) && popup.style.display === "block") {
+                    popup.style.display = "none";
+                }
+            });
+        });
+
+      </script>
+</body>
+</html>

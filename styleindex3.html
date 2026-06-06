@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <title>Health and Finances</title>
+    <link rel="stylesheet" href="stylesrightmain.css">
+</head>
+<body>
+
+   
+        <main class="content">
+            <!-- Навигация -->
+            <ul class="navbar">
+                <div class = "search-box">
+                    <img src = "search-icon-png-1.png">
+                    <input type = "text" placeholder = "Search posts">
+                    </div>
+
+
+
+                <li id="profile-menu">
+                    <a href="javascript:void(0)" onclick="togglePopup(event, 'profile-menu')"><span>👤</span></a>
+                    <div class="popup-menu" id="profile-menu-popup">
+                        <a href="index.html">Профил</a>
+                        <a href="editprofile.html">Настройки</a>
+                    
+                    </div>
+                </li>
+                <li id="calendar-menu">
+                    <a href="calendar.html"><span>📖</span>
+                    </li>
+    
+                    <li>
+                        <a href="javascript:void(0)" onclick="togglePopup(event, 'notifications-menu')"><span>🌍</span></a>
+                        <div class="popup-menu" id="notifications-menu-popup">
+                            <a href="#">Известия</a>
+                            <ul class="grid">
+                                <li class="article-container">
+                                  <article>М.М. ви хареса снимка</article>
+                                </li>
+                                <li class="article-container">
+                                  <article>Н.Д. ви хареса пост</article>
+                                </li>
+                                <li class="article-container">
+                                  <article>Е.В. сподели ваш пост</article>
+                                </li>
+                                ...
+                              </ul>
+                        </div>
+                    </li>
+    
+                    <li>
+                        <a href="javascript:void(0)" onclick="togglePopup(event, 'favorites-menu')"><span>⭐</span></a>
+                        <div class="popup-menu" id="favorites-menu-popup">
+                            <a href="#">Записани публикации</a>
+                            <p> Публикация 1
+                                Публикация 2
+                                Публикация 3
+                            </p>
+                            
+                        </div>
+                    </li>
+                </ul>
+    
+
+                        <a href="javascript:void(0)" onclick="togglePopup(event, 'favorites-menu')"><span>⭐</span></a>
+                        <div class="popup-menu" id="favorites-menu-popup">
+                            <a href="#">Записани публикации</a>
+                    </div>
+                </li>
+            </ul>
+
+          
+
+    <div class="quiz-container">
+        <div class="popup">   
+             
+          <form>
+            <h2 class="center-title">Артистични ли сте? </h2>
+        
+       
+            
+    <form>
+<h5><br><br><br>1. Колко често се спирате да гледате залези?</h5>
+<label class="radio-label">
+<input type="radio" name="question1" value="Рядко">
+<span class="radio-text">Рядко</span>
+</label>
+<label class="radio-label">
+<input type="radio" name="question1" value="Често">
+<span class="radio-text">Често</span>
+</label>
+
+<label class="radio-label">
+<input type="radio" name="question1" value="Никога">
+<span class="radio-text">Никога</span>
+</label>
+
+<h5>2. Колко често рисувате?</h5>
+<label class="radio-label">
+<input type="radio" name="question2" value="Рядко">
+<span class="radio-text">Рядко</span>
+</label>
+<label class="radio-label">
+<input type="radio" name="question2" value="Често">
+<span class="radio-text">Често</span>
+</label>
+
+<label class="radio-label">
+<input type="radio" name="question2" value="Никога">
+<span class="radio-text">Никога</span>
+</label>
+
+
+<h5>3. Колко често слушате музика? </h5>
+<label class="radio-label">
+<input type="radio" name="question3" value="Рядко">
+<span class="radio-text">Рядко</span>
+</label>
+<label class="radio-label">
+<input type="radio" name="question3" value="Често">
+<span class="radio-text">Често</span>
+</label>
+
+<label class="radio-label">
+<input type="radio" name="question3" value="Никога">
+<span class="radio-text">Никога</span>
+</label>
+
+<h5>4. Колко често се обличате според собствения си вкус?  </h5>
+<label class="radio-label">
+<input type="radio" name="question4" value="Рядко">
+<span class="radio-text">Рядко</span>
+</label>
+<label class="radio-label">
+<input type="radio" name="question4" value="Често">
+<span class="radio-text">Често</span>
+</label>
+
+<label class="radio-label">
+<input type="radio" name="question4" value="Никога">
+<span class="radio-text">Никога</span>
+</label>
+
+<h5>5. Колко често обичате да бъдете тук? </h5>
+<label class="radio-label">
+<input type="radio" name="question5" value="Рядко">
+<span class="radio-text">Рядко</span>
+</label>
+<label class="radio-label">
+<input type="radio" name="question5" value="Често">
+<span class="radio-text">Често</span>
+</label>
+
+<label class="radio-label">
+<input type="radio" name="question5" value="Никога">
+<span class="radio-text">Никога</span>
+</label>
+
+   </form>
+   <div id="result" 
+   style = "position: fixed; text-align: center;    position: absolute;
+         
+   left: 50%;
+   transform: translate(-50%, -50%);
+   text-align: center; padding-top: 39px;" >
+</div>
+
+
+   <br><button type="button" class="submit-button" onclick="saveAndShowResult()">Запази</button>
+   
+        </div>
+      </div>
+        
+
+ <div class="main-layout">
+            <!-- Ляв aside със съдържание -->
+            <aside class="left-background">
+              
+            </aside>
+        
+            <!-- Десен aside, само фон -->
+            <aside class="right-background">
+                <!-- Тук може да сложиш фоново изображение или да го оставиш празен -->
+            </aside>
+        </div>
+        
+
+
+
+    
+
+
+
+
+
+
+<style> 
+
+/* Подравняване на навигацията и търсачката */
+
+.open-btn {
+    padding: 10px 20px;
+    background-color:  #19b540;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+
+
+body{
+
+ 
+  background-color: #f7f1e1;
+}
+
+/* Подравняване на формата */
+form {
+    text-align: left;
+    padding: 20px;
+}
+
+/* Радио бутони подравнени отляво */
+
+
+
+
+
+
+/* Центриране на заглавието */
+.center-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+/* По-голям шрифт за въпросите */
+h5 {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Центриране на заглавието */
+.center-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.h1{
+    text-align: center;
+    font-size: 10px;
+    font-style: italic;
+    color: #444;
+    margin-bottom: 20px;
+
+}
+
+/* Центриране на цялата форма */
+
+
+/* По-голям шрифт за въпросите */
+
+
+/* Шрифт за отговорите */
+
+/* За по-добро визуално подреждане на радио бутоните */
+
+
+/* Централно позициониране на кутията */
+
+/* Самата кутия (popup/form) */
+
+
+/* Примерни стилове за въпроси */
+
+
+/* Стилове за отговорите */
+/* Контейнер за центриране */
+.quiz-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color:#f0e6d2;;
+    
+    width: -400px; 
+    padding-left: 100px; 
+    padding-right: 100px; 
+    margin-left: 280px; 
+    padding-bottom: 100px;
+    margin-top: 62px; 
+    border-style: ridge; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+}
+
+/* Вътре във формата */
+form {
+    text-align: left;
+}
+
+
+.left-background, .right-background {
+    width: 380px; /* Ширината на панела */
+    padding: 20px;
+    background-color:#f0e6d2;
+    height: 1088px ;
+    margin: 70px;
+    border-radius: 1px; 
+    margin-top:-1130px; 
+    margin-left: 560px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+   
+    
+   
+
+}
+
+/* Въпроси */
+
+/* Отговори */
+.radio-label {
+    display: block;
+    margin-bottom: 12px;
+}
+
+
+.center-title{
+    text-align: center;
+    font-size: 20px;
+    font-style: italic;
+    color: #444;
+    margin-bottom: 20px;
+    padding-top: 35px;
+}
+
+.radio-text {
+    font-size: 12px;
+    font-family: 'Arial', sans-serif;
+}
+.submit-button {
+    display: block;
+    margin: 25px auto 0 auto;
+    padding: 10px 25px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 14px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 100px; 
+}
+
+.submit-button:hover {
+    background-color: #45a049;
+}
+
+.result-box {
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+    font-style: italic;
+    margin-top:100px; 
+}
+
+
+
+
+
+
+
+
+
+
+
+.right-background{
+    margin-right: -257px;
+    top: 100px; 
+}
+
+.left-background{
+    margin-left: 23px; 
+
+
+}
+
+
+/* Може да добавите допълнителен стил за разположението на панелите */
+.main-layout {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+</style>
+
+
+    
+<script>
+    function togglePopup(event, popupId) {
+   event.stopPropagation();
+   let popup = document.getElementById(popupId + '-popup');
+   popup.style.display = (popup.style.display === "block") ? "none" : "block";
+}
+
+document.addEventListener("click", function(event) {
+   let popups = document.querySelectorAll('.popup-menu');
+   popups.forEach(popup => {
+       if (!popup.contains(event.target) && popup.style.display === "block") {
+           popup.style.display = "none";
+       }
+   });
+});
+
+function saveAndShowResult() {
+const q1 = document.querySelector('input[name="question1"]:checked');
+const q2 = document.querySelector('input[name="question2"]:checked');
+const q3 = document.querySelector('input[name="question3"]:checked');
+
+const resultDiv = document.getElementById("result");
+
+// Проверка дали всички въпроси са попълнени
+if (!q1 || !q2 || !q3) {
+resultDiv.style.color = "red";
+resultDiv.innerHTML = "⚠️ Моля, отговори на всички въпроси, за да запазиш.";
+return;
+}
+
+// Пресмятане на резултат
+const values = {
+"Рядко": 1,
+"Често": 2,
+"Никога": 0
+};
+
+let score =
+(values[q1.value] || 0) +
+(values[q2.value] || 0) +
+(values[q3.value] || 0);
+
+let message = "";
+if (score >= 5) {
+message = "<br>Съвършено определено може да се каже едно - <br> безспорно имате чувство за красота, <br>което е свойствено за артистичните натури.</br>";
+} else if (score >= 3) {
+message = "<br>Понякога витаете в облаците,<br> но макар и красотата да не Ви е безразлична,<br> Вие сте по-скоро рационалист.<br> Винаги съчетавате приятното с полезното.😁.</br>";
+} else {
+message = "<br>Красотата на изгрева или залеза едва ли ще ви спре!"
+
+}
+
+resultDiv.style.color = "#4699b5";
+resultDiv.innerHTML = `<strong><br>Резултат:</str ong> ${message}`;
+alert("Успешно запазено!");
+}
+
+
+
+
+</script>
+
+</body>
+</html>
+
+
+
+

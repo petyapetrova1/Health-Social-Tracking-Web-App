@@ -1,0 +1,430 @@
+body {
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  list-style-type: none;
+  padding: 5px;
+  margin: 0;
+  background-color: #19b540;
+  position: fixed; 
+  left: 0; 
+  right:0; 
+  top: 0; 
+  width: 100%;
+  z-index: 1000; 
+
+
+}
+
+
+
+.navbar li {
+  margin: 0 15px;
+  position: relative;
+  margin-top: 4px; 
+}
+
+.navbar a {
+  color: white;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+  
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 50px;
+    margin: 0px; 
+    align-items: flex-start; 
+    padding-top: 60px;
+  
+}
+.content {
+width: 80%;
+text-align: center;
+}
+
+
+
+.popup-menu {
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  width: 150px;
+  text-align: left;
+  z-index: 1000;
+}
+
+.popup-menu a {
+display: block;
+padding: 10px;
+color: black;
+text-decoration: none;
+font-size: 16px;
+}
+
+.popup-menu a:hover {
+background-color: #f2f2f2;
+}
+.search-box { 
+background: #efefef; 
+width: 350px; 
+border-radius: 20px; 
+display: flex; 
+align-items: center; 
+padding: 0 15px;
+}
+
+
+.search-box img{
+width: 40px; 
+}
+
+.search-box input{
+width: 100%; 
+background: transparent; 
+padding: 10px; 
+outline: none; 
+border:0;
+}
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body{
+background: #dfe6d9;
+}
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body{
+background: #dfe6d9;
+}
+
+.container{
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+user-select: none;
+}
+
+.container .calendar{
+width: 546px;
+height: 622px;
+background-color: #fff;
+box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.2);
+font-family: "Roboto", sans-serif;
+overflow: hidden;
+position: relative; 
+left: 50%;
+transform: translateX(-50%);
+}
+
+.container .digital_clock{
+position: absolute;
+top: 0;
+left: 0;
+padding: 20px;
+}
+
+.digital_clock:hover{
+background: linear-gradient(to top, #ADD8E6  0%, #ffffff 100%);
+}
+
+.digital_clock .time{
+font-size: 50px;
+color: #fff;
+}
+
+.digital_clock .time .format{
+font-size: 25px;
+}
+
+.calendar .month{
+width: 100%;
+background-color: #ADD8E6;
+display: flex;
+justify-content: space-between;
+align-items: center;
+color: #fff;
+padding: 84px 30px 40px 30px;
+text-align: center;
+margin-top: 15px; 
+}
+
+.month h2{
+font-size: 32px;
+margin-top: 25px;
+}
+
+.month p{
+margin-top: 5px;
+font-size: 17px;
+}
+
+.month .arrow{
+width: 40px;
+height: 40px;
+display: inline-block;
+background-color: #ADD8E6;
+line-height: 40px;
+border-radius: 50%;
+cursor: pointer;
+transition: 0.3s;
+}
+
+.month .arrow:hover{
+background-color: #ADD8E6;
+}
+
+
+
+.container .week{
+display: flex;
+background-color: #ADD8E6;
+color: #fff;
+}
+
+.week div{
+width: 14.28%;
+text-align: center;
+padding: 10px 0px;
+transition: 0.4s;
+}
+
+.week .active{
+background-color: #ADD8E6;
+}
+
+.week div:hover{
+background-color: #ADD8E6;
+}
+
+
+.container .dates{
+display: flex;
+flex-wrap: wrap;
+padding: 10px 0;
+}
+
+.dates div{
+width: 74px;
+height: 55px;
+margin: 2px;
+margin-top: 1.7px;
+text-align: center;
+line-height: 53px;
+border: 3px solid #e9e9e9;
+}
+
+.dates .today{
+background-color: #ADD8E6;
+color: #fff;
+}
+
+.dates .today:hover{
+background-color: #ADD8E6;
+font-size: 20px;
+font-weight: 600;
+}
+
+.dates div:hover:not(.today){
+border: 3px dashed #111;
+background-color: #95daf2;
+
+font-size: 600;
+cursor: pointer;
+-webkit-box-reflect: below 4px linear-gradient(transparent, #0000004d);
+}
+
+.dates div:nth-child(n+36):hover{
+-webkit-box-reflect: above 4px linear-gradient(transparent, #0000004d);
+}
+
+
+.calendar .dates div:nth-child(n+43){
+border: none !important;
+cursor: auto !important;
+background: none !important;
+}
+
+.dates .prev, .dates .next{
+opacity: 0.5;
+}
+
+.dates .prev:hover,
+.dates .next:hover{
+opacity: 1;
+}
+.left-background, .right-background {
+    width: 25%; /* Ширината на панела */
+    padding: 20px;
+    background-color: #badae5; /* Старият цвят на фона */
+    height: 1000px ;
+    margin: 70px;
+    border-radius: 1px; 
+}
+
+.right-background{
+    margin-right: -257px; 
+}
+
+.left-background{
+    margin-left: 45px; 
+}
+.instruction {
+    color: rgb(0, 0, 0);
+    padding: 23px;
+    text-align: center;
+    border-radius: 18px;
+    margin-top: 20px; 
+    box-shadow: 20px 29px 5px rgba(0, 0, 0, 0.2);
+    padding:50px;
+    border-radius: 1px;
+
+}
+
+/* Може да добавите допълнителен стил за разположението на панелите */
+.main-layout {
+    display: flex;
+    justify-content: space-between;
+}
+.popup-overlay {
+
+    display: none;
+
+    position: absolute;
+
+    top: 50px;
+
+    left: 0;
+
+    width: 250px;
+
+    height: 250px;
+
+  
+    align-items: left; 
+    transform: translateX(175%);
+    
+}
+
+.popup {
+font-family: Arial, sans-serif;
+
+    position: absolute;
+    width: 546px;
+    background: #fff; 
+    border-radius: 6px; 
+    position: absolute; 
+    top: 20px; 
+    left: 50px; 
+    transform: translate(-50, -50); 
+    text-align: center; 
+    color: #333; 
+    align-items: center;
+    height: 860px;
+    margin-right: 200px;
+     
+}
+
+.radio-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 10px;
+    max-width: 600px;
+    padding-left: 40px; /* Добавя място за кръглата част */
+
+
+  }
+  
+  .radio-label input {
+    margin-top: 3px; /* малко коригиране, за да е по средата на текста */
+    flex-shrink: 0;
+  }
+  
+  .radio-text {
+    display: inline-block;
+    text-align: left;
+    word-break: break-word;
+    white-space: normal;
+  }
+  
+ h5 {
+        text-align: left;
+        padding-left:15px; 
+      }
+
+      
+      h3{
+        padding-top: 29px;
+
+      }
+
+      .some{
+        padding-top:400px;
+      }
+
+      .submit-button {
+background-color: #ADD8E6;
+        color: white;
+        font-size: 18px;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin: 20px auto;
+        margin-top: 100px; 
+        display: block;
+        margin: 25px auto 0 auto;
+        display: flex;
+        
+        
+      }
+
+    
+    
+    .submit-button:hover {
+background-color: #ADD8E6;
+; /* малко по-тъмно при ховър */
+    }
+    
+   
+  
+    .result {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center; /* Центрира текста */
+      font-size: 20px; /* Настрой размер на шрифта според нуждите */
+  }
+   
+ 
+.form{ 
+  padding-top: 300px; 
+}

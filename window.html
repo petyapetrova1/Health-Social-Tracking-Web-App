@@ -1,0 +1,257 @@
+<!-- Бутон за отваряне на прозорчето -->
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <title>Health and Finances</title>
+    <link rel="stylesheet" href = "window.css"
+</head>
+<body>
+
+  <div class="container">
+    <!-- Лява секция с късмет -->
+    <aside class="luck-section">
+        <h2>Късмет за деня</h2>
+        <p id="luck-text">Провери късмета си!</p>
+        <button onclick="generateLuck()">Изтегли късмет</button>
+    </aside>
+        <aside class="test-section">
+          <h2>Тестове</h2>
+          <p id="test-section">за усъвършенстване и забавление!</p>
+          <button class="open-modal-btn" onclick="location.href='psicholog.html'">Да решаваме!</button>
+        </aside>        
+          </aside>
+        <main class="content">
+            <ul class="navbar">
+                <div class = "search-box">
+                    <img src = "search-icon-png-1.png">
+                    <input type = "text" placeholder = "Search posts">
+                    </div>
+
+
+                    
+                <li id="profile-menu">
+                    <a href="javascript:void(0)" onclick="togglePopup(event, 'profile-menu')"><span>👤</span></a>
+                    <div class="popup-menu" id="profile-menu-popup">
+                        <a href="index.html">Начало</a>
+                        <a href="editprofile.html">Настройки</a>
+                    </div>
+                </li>
+                   
+                <li id="calendar-menu">
+                    <a href="calendar.html"><span>📖</span>
+                    </li>
+    
+                <li>
+
+                    
+                    <a href="javascript:void(0)" onclick="togglePopup(event, 'notifications-menu')"><span>🌍</span></a>
+                    <div class="popup-menu" id="notifications-menu-popup">
+                        <a href="#">Известия</a>
+                        <ul class="grid">
+                            <li class="article-container">
+                              <article>М.М. ви хареса снимка</article>
+                            </li>
+                            <li class="article-container">
+                              <article>Н.Д. ви хареса пост</article>
+                            </li>
+                            <li class="article-container">
+                              <article>Е.В. сподели ваш пост</article>
+                            </li>
+                            ...
+                          </ul>
+                          
+                        
+                    </div>
+                </li>
+
+
+
+
+           <li>
+                    <a href="javascript:void(0)" onclick="togglePopup(event, 'favorites-menu')"><span>⭐</span></a>
+                    <div class="popup-menu" id="favorites-menu-popup">
+                        <a href="favorite.html">Записани публикации</a>
+                        
+                    </div>
+                </li>
+            </ul>
+
+            <aside class = "event-section">
+              <button id="openPopupBtn" class="open-btn">Събития</button> 
+              <button class="open-modal-btn" onclick="location.href='friends.html'">Приятели</button>
+             </aside>
+
+  <div class="popup-content">
+      
+    <h2 class="popup-title">Jo организира събитие!</h2>
+    <img src = "Untitled-design-2-768x644.webp" alt = "Събитие" class = "event-image">
+
+    <form id="eventForm">
+      <label for="eventTitle">Йога практики</label>
+    
+
+      <label for="eventDate">Дата и час: 28.06.2025г.<br>12:00</label>
+  
+
+      <label for="eventLocation">Място:<br>Велико Търново</label>
+
+
+      
+      <button type="button" class="submit-btn" onclick="saveAndShowResult()">Записване</button>
+  
+    </form>
+  </div>
+</div>
+
+
+<script>
+  const openBtn = document.getElementById("openPopupBtn");
+  const closeBtn = document.getElementById("closePopupBtn");
+  const popup = document.getElementById("eventPopup");
+
+  openBtn.addEventListener("click", () => {
+    popup.style.display = "flex";
+  });
+
+  closeBtn.addEventListener("click", () => {
+    popup.style.display = "none";
+  });
+
+  window.addEventListener("click", (e) => {
+    if (e.target === popup) {
+      popup.style.display = "none";
+    }
+  });
+
+  
+
+function togglePopup(event, popupId) {
+            event.stopPropagation();
+            let popup = document.getElementById(popupId + '-popup');
+            popup.style.display = (popup.style.display === "block") ? "none" : "block";
+        }
+
+        document.addEventListener("click", function(event) {
+            let popups = document.querySelectorAll('.popup-menu');
+            popups.forEach(popup => {
+                if (!popup.contains(event.target) && popup.style.display === "block") {
+                    popup.style.display = "none";
+                }
+            });
+        });
+
+        function addPost() {
+            let postText = document.getElementById("postInput").value;
+            if (postText.trim() === "") {
+                alert("Моля, напишете нещо преди да публикувате.");
+                return;
+            }
+            alert("Публикацията е добавена: " + postText);
+            document.getElementById("postInput").value = "";
+        }
+
+        function generateLuck() {
+            const luckMessages = [
+                "Днес е твоят ден за успех!",
+                "Очаква те приятна изненада!",
+                "Късметът е на твоя страна!",
+                "Твоите усилия ще бъдат възнаградени!",
+                "Очаквай хубави новини!"
+            ];
+            const randomIndex = Math.floor(Math.random() * luckMessages.length);
+            document.getElementById("luck-text").textContent = luckMessages[randomIndex];
+        }
+        function previewImage(event) {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+        const imgElement = document.createElement('img');
+        imgElement.src = e.target.result;
+        imgElement.style.maxWidth = '100%';
+        imgElement.style.maxHeight = '300px'; 
+
+        const postContainer = document.querySelector('.write-post-container');
+        postContainer.appendChild(imgElement);
+    };
+
+    if (file) {
+        reader.readAsDataURL(file);
+    }
+}
+
+function previewVideo(event) {
+    const file = event.target.files[0];
+    const videoElement = document.createElement('video');
+    videoElement.controls = true;
+    videoElement.style.maxWidth = '100%';
+    videoElement.style.maxHeight = '300px'; 
+
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+        videoElement.src = e.target.result;
+        const postContainer = document.querySelector('.write-post-container');
+        postContainer.appendChild(videoElement);
+    };
+
+    if (file) {
+        reader.readAsDataURL(file);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+        var checkList = document.getElementById('list1');
+        var anchor = checkList.getElementsByClassName('anchor')[0];
+        var items = checkList.getElementsByClassName('items')[0];
+        
+        anchor.addEventListener("click", function (evt) {
+            checkList.classList.toggle('visible');
+            evt.stopPropagation();
+        });
+
+        document.addEventListener("click", function (event) {
+            if (!checkList.contains(event.target)) {
+                checkList.classList.remove('visible');
+            }
+        });
+    });
+    
+    
+loadData();
+document.addEventListener("DOMContentLoaded", function () {
+        var checkList = document.getElementById('list1');
+        var anchor = checkList.getElementsByClassName('anchor')[0];
+        var items = checkList.getElementsByClassName('items')[0];
+        
+        anchor.addEventListener("click", function (evt) {
+            checkList.classList.toggle('visible');
+            evt.stopPropagation();
+        });
+
+        document.addEventListener("click", function (event) {
+            if (!checkList.contains(event.target)) {
+                checkList.classList.remove('visible');
+            }
+        });
+    });
+      function saveAndShowResult() {
+      
+            alert("Записването е успешно!");
+        }
+  // Тук по-късно ще добавим fetch за връзка с бекенд
+</script>

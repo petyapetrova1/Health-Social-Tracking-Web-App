@@ -1,0 +1,404 @@
+/* Стилове за бутона */
+.open-btn {
+    padding: 10px 20px;
+    background-color:  #19b540;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  /* Pop-up overlay */
+  .popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  /* Вътрешна част на прозорчето */
+  .popup-content {
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+    animation: fadeIn 0.3s ease;
+    margin-top: -360px;
+    margin-left:280px;
+  }
+  
+  
+
+  /* Формата вътре */
+  form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+  }
+  
+
+  
+  /* Бутон за изпращане */
+  .submit-btn {
+    margin-top: 20px;
+    background-color:  #19b540;
+    color: white;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  /* Анимация */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  body {
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+
+
+
+.event.container{ 
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #d7c2c2;
+    width: -400px; 
+    padding-left: 100px; 
+    padding-right: 100px; 
+    margin-left: 280px; 
+    padding-bottom: 100px;
+    border-style: ridge; 
+    margin-top: 63px; 
+
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 50px;
+    margin: 0px; 
+    align-items: flex-start; 
+    padding-top: 60px;
+  
+}
+
+.luck-section {
+    width: 20%;
+    background-color: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+    border-right: 2px solid #ccc;
+    margin: 10px;;
+}
+
+.luck-section button {
+    padding: 10px;
+    background-color: #19b540;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    margin:0;
+ 
+}
+
+.luck-section button:hover {
+    background-color: #157a33;
+}
+
+.content {
+    width: 80%;
+    text-align: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+    padding: 5px;
+    margin: 0;
+    background-color: #19b540;
+    position: fixed; 
+    left: 0; 
+    right:0; 
+    top: 0; 
+    width: 100%;
+    z-index: 1000; 
+    
+
+
+}
+
+
+
+.navbar li {
+    margin: 0 15px;
+    position: relative;
+    margin-top: 4px; 
+}
+
+.navbar a {
+    color: white;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+
+.popup-menu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 150px;
+    text-align: left;
+    z-index: 1000;
+    text-align:center;
+}
+
+.popup-menu a {
+    display: block;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.popup-menu a:hover {
+    background-color: #f2f2f2;
+}
+
+ 
+    
+    .add-post-links a img{
+        width: 20px; 
+        margin-right:10px;
+
+
+    }
+
+    .post-container{
+      width: 100%;
+        padding-top: 100px;
+    
+        padding: 15px;
+        border-radius: 10px;
+     
+        position: relative;
+        top: 80px; /* Настрой разстоянието отгоре */
+        left: 59%;
+        transform: translateX(-50% ); /* Центрира кутията хоризонтално */
+        margin-left: -180px;
+        text-align: center;
+        margin-top: -400px;
+    }
+
+
+
+
+
+
+    textarea {
+        width: calc(100% - 20px); /* Оставя малко разстояние от ръбовете */
+        height: 50px; /* Намали височината, ако изглежда твърде голямо */
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        resize: none;
+        display: block; /* Уверява се, че е на нов ред */
+        margin: 0 auto; /* Центрира го хоризонтално */
+    }
+    
+
+.post-btn {
+    margin-top: 10px;
+    margin-left:350px; 
+    padding: 10px 15px;
+    background-color: #138931;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.post-btn:hover {
+    background-color: #19b540;
+}
+
+.test-section {
+    width: 20%;
+    background-color: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+    border-right: 2px solid #ccc;
+    margin: 10px;;
+}
+
+.test-section button {
+    padding: 10px;
+    background-color: #19b540;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    margin:0;
+}
+
+.test-section button:hover {
+    background-color: #157a33;
+}
+
+.content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 5px; /* Дава място под навбара */
+        justify-content: flex-start;
+    }
+    .search-box { 
+        background: #efefef; 
+        width: 350px; 
+        border-radius: 20px; 
+        display: flex; 
+        align-items: center; 
+        padding: 0 15px;
+    }
+    
+    
+    .search-box img{
+        width: 40px; 
+    }
+    
+    .search-box input{
+        width: 100%; 
+        background: transparent; 
+        padding: 10px; 
+        outline: none; 
+        border:0;
+
+        box-sizing: border-box;
+        
+    }
+
+
+
+    .event-section {
+        position: fixed; /* Заключва го на екрана */
+        right: 0;
+        top: 100px;
+        width: 250px; /* Определя ширината му */
+        padding: 20px;
+
+    }
+
+    .event-section button {
+        padding: 10px;
+        background-color: #19b540;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        border-radius: 5px;
+        margin:0;
+    }
+
+    .event-section :hover {
+        background-color: #157a33;
+    }
+
+    .event-section {
+        display: flex;
+        flex-direction: column;
+        gap: 10px; /* Разстояние между бутоните */
+    }
+    
+
+
+.event-image {
+  max-width: 100%;
+  width: 500px; /* или колкото искаш */
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+    .user-profile  {
+display: flex; 
+align-items: center; 
+
+    }
+    .user-profile img{
+        width: 45px; 
+       margin-left: 6px;  
+       border-radius: 50px; 
+       margin-right: 10px; 
+    }
+    .user-profile p { 
+        margin-bottom: -5px; 
+        font-weight: 500px;
+
+    }
+    
+
+        .user-profile span{
+        font-size: 13px; 
+        color: #9a9a9a;
+    }
+
+  
+.event-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #ffffff;
+    width: 500px; 
+    padding-left: 100px; 
+    padding-right: 100px; 
+    margin-left: 360px; 
+    padding-bottom: 100px;
+    border-style: ridge; 
+    margin-top: -390px; 
+
+  
+}
+
+  
+
+.img {
+    width: 50px;
+    height: 20px; 
+
+}

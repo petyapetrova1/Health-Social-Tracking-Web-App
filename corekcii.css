@@ -1,0 +1,439 @@
+body {
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 50px;
+    margin: 0px; 
+    align-items: flex-start; 
+    padding-top: 60px;
+  
+}
+
+.luck-section {
+    width: 20%;
+    background-color: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+    border-right: 2px solid #ccc;
+    margin: 10px;;
+}
+
+.luck-section button {
+    padding: 10px;
+    background-color: #19b540;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    margin:0;
+ 
+}
+
+.luck-section button:hover {
+    background-color: #157a33;
+}
+
+.content {
+    width: 80%;
+    text-align: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+    padding: 5px;
+    margin: 0;
+    background-color: #19b540;
+    position: fixed; 
+    left: 0; 
+    right:0; 
+    top: 0; 
+    width: 100%;
+    z-index: 1000; 
+
+
+}
+
+.navbar li {
+    margin: 0 15px;
+    position: relative;
+    margin-top: 4px; 
+}
+
+.navbar a {
+    color: white;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+
+.popup-menu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 150px;
+    text-align: left;
+    z-index: 1000;
+}
+
+.popup-menu a {
+    display: block;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.popup-menu a:hover {
+    background-color: #f2f2f2;
+}
+
+.write-post-container {
+        width: 50%;
+        background-color: #f8f9fa;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(73, 255, 2, 0.2);
+        position: absolute;
+        top: 80px; /* Настрой разстоянието отгоре */
+        left: 50%;
+        transform: translateX(-50% ); /* Центрира кутията хоризонтално */
+        margin-left: 40px;
+        text-align: center; 
+   
+    }
+    
+
+    .write-post-container-btn {
+        margin-top: 10px;
+        padding: 10px 15px;
+        background-color: #138931;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        border-radius: 5px;
+    }
+    
+    .add-post-links a img{
+        width: 20px; 
+        margin-right:10px;
+
+
+    }
+
+    .post-container{
+        width: 61%;
+        background-color: #f8f9fa;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(73, 255, 2, 0.2);
+        position: relative;
+        top: 80px; /* Настрой разстоянието отгоре */
+        left: 59%;
+        transform: translateX(-50% ); /* Центрира кутията хоризонтално */
+        margin-left: -290px;
+        text-align: center;
+        margin-top: -240px;
+    }
+
+    textarea {
+        width: calc(100% - 20px); /* Оставя малко разстояние от ръбовете */
+        height: 50px; /* Намали височината, ако изглежда твърде голямо */
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        resize: none;
+        display: block; /* Уверява се, че е на нов ред */
+        margin: 0 auto; /* Центрира го хоризонтално */
+    }
+    
+
+.post-btn {
+    margin-top: 10px;
+    margin-left:350px; 
+    padding: 10px 15px;
+    background-color: #138931;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.post-btn:hover {
+    background-color: #19b540;
+}
+
+.test-section {
+    width: 20%;
+    background-color: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+    border-right: 2px solid #ccc;
+    margin: 10px;;
+}
+
+.test-section button {
+    padding: 10px;
+    background-color: #19b540;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    margin:0;
+}
+
+.test-section button:hover {
+    background-color: #157a33;
+}
+
+.content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 5px; /* Дава място под навбара */
+        justify-content: flex-start;
+    }
+    .search-box { 
+        background: #efefef; 
+        width: 350px; 
+        border-radius: 20px; 
+        display: flex; 
+        align-items: center; 
+        padding: 0 15px;
+    }
+    
+    
+    .search-box img{
+        width: 40px; 
+    }
+    
+    .search-box input{
+        width: 100%; 
+        background: transparent; 
+        padding: 10px; 
+        outline: none; 
+        border:0;
+    }
+
+
+
+    .event-section {
+        position: fixed; /* Заключва го на екрана */
+        right: 0;
+        top: 100px;
+        width: 250px; /* Определя ширината му */
+        padding: 20px;
+
+    }
+
+    .event-section button {
+        padding: 10px;
+        background-color: #19b540;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        border-radius: 5px;
+        margin:0;
+    }
+
+    .event-section :hover {
+        background-color: #157a33;
+    }
+
+    .event-section {
+        display: flex;
+        flex-direction: column;
+        gap: 10px; /* Разстояние между бутоните */
+    }
+    
+
+
+
+
+    .user-profile  {
+display: flex; 
+align-items: center; 
+
+    }
+    .user-profile img{
+        width: 45px; 
+       margin-left: 6px;  
+       border-radius: 50px; 
+       margin-right: 10px; 
+    }
+    .user-profile p { 
+        margin-bottom: -5px; 
+        font-weight: 500;
+
+    }
+    
+    .user-profile span{
+        font-size: 13px; 
+        color: #9a9a9a;
+    }
+
+    .post-text{
+color: #9a9a9a; 
+margin: 15px 0; 
+font-size: 15px; 
+    } 
+    .post-text span{
+        color: #626262;
+        font-weight: 500;
+    }
+.post-text a{ 
+    color: #1876f2; 
+    text-decoration: none ; 
+}
+
+.post-container img{
+    max-width: 100%; 
+    height: auto; 
+}
+.post-row{ 
+display: flex; 
+align-items: center; 
+justify-content: space-between; 
+
+.activity-icons div img{ 
+width: 18px; 
+margin-right: 10px; 
+
+}
+
+.activity-icons div{ 
+    display: inline-flex; 
+    align-items: center; 
+    margin-right: 30px; 
+}
+    
+
+    .add-post-links {
+        display: flex; /* Уверява се, че бутоните ще стоят на един ред */
+        justify-content: flex-start; /* Подравнява ги наляво */
+        align-items: center;
+    
+    }
+
+
+    .add-post-links a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+    }
+
+
+    
+    
+        .add-post-links img {
+            width: 23px; 
+            margin-left: 10px;  
+            border-radius: 0px; 
+            margin-right: 10px; 
+            padding: 0px; 
+        }
+
+    
+        
+           
+
+    @media (max-width: 768px) {
+    .add-post-links {
+        flex-direction: column; /* Подрежда бутоните вертикално */
+        align-items: center; /* Центрира бутоните */
+    }
+
+    .add-post-links a {
+        width: 100%; /* Кара бутоните да заемат цялата ширина */
+        text-align: center;
+    }
+
+    .add-post-links img {
+        width: 30px; /* Може да увеличиш малко иконите за по-малки екрани */
+        height: 30px;
+    }
+
+
+
+
+    .dropdown-check-list {
+        display: inline-block;
+        position: relative;
+    }
+
+    .dropdown-check-list .anchor {
+        position: relative;
+        cursor: pointer;
+        display: inline-block;
+        padding: 5px 50px 5px 10px;
+        border: 1px solid #ccc;
+        background-color: white;
+    }
+
+    .dropdown-check-list .anchor:after {
+        position: absolute;
+        content: "";
+        border-left: 2px solid black;
+        border-top: 2px solid black;
+        padding: 5px;
+        right: 10px;
+        top: 20%;
+        transform: rotate(-135deg);
+    }
+
+    .dropdown-check-list .items {
+        position: absolute;
+        padding: 5px;
+        display: none;
+        margin: 0;
+        border: 1px solid #ccc;
+        border-top: none;
+        background: white;
+        list-style: none;
+        width: 100%;
+        z-index: 10;
+    }
+
+    .dropdown-check-list .items li {
+        padding: 5px;
+    }
+
+    .dropdown-check-list.visible .items {
+        display: block;
+    }
+
+
+.dropdown-check-list ul.items li { 
+display:flex; 
+align-items: center; 
+}
+
+
+    }
+
+
+    
+}

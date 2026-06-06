@@ -1,0 +1,343 @@
+Фн в JS 
+
+JavaScript functionе блок от JavaScript код, който може да бъде изпълнен при „извикване“.
+
+Например, функция може да бъде извикана, когато настъпи събитие , например когато потребителят щракне върху бутон.
+
+
+JavaScript в <head>
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Paragraph changed.";
+}
+</script>
+</head>
+<body>
+<h2>Demo JavaScript in Head</h2>
+
+<p id="demo">A Paragraph</p>
+<button type="button" onclick="myFunction()">Try it</button>
+
+</body>
+</html>
+
+
+
+JavaScript в <body>
+В този пример JavaScript functionе поставен в <body>секцията на HTML страница.
+
+Функцията се извиква (извиква) при натискане на бутон:
+
+
+JavaScript в <body>
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Demo JavaScript in Body</h2>
+
+<p id="demo">A Paragraph</p>
+
+<button type="button" onclick="myFunction()">Try it</button>
+
+<script>
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Paragraph changed.";
+}
+</script>
+
+</body>
+</html>
+
+
+
+Използване на innerHTML
+За достъп до HTML елемент можете да използвате document.getElementById(id)метода.
+Използвайте idатрибута, за да идентифицирате HTML елемента.
+
+След това използвайте innerHTMLсвойството, за да промените HTML съдържанието на HTML елемента:
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>My First Web Page</h1>
+<p>My First Paragraph</p>
+
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML = "<h2>Hello World</h2>";
+</script>
+
+</body>
+</html>
+
+Забележка
+Промяната на свойството innerHTML на HTML елемент е най-често срещаният начин за показване на данни в HTML.
+
+
+
+
+Използване на innerText
+За достъп до HTML елемент използвайте document.getElementById(id)метода.
+
+След това използвайте innerTextсвойството, за да промените вътрешния текст на HTML елемента:
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>My First Web Page</h1>
+<p>My First Paragraph</p>
+
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerText = "Hello World";
+</script>
+
+</body>
+</html>
+
+//InnerText се използва за разглеждането на текст само 
+//innerHtml се използва за всичко 
+
+
+
+При тестването е удобно да се използва document.write():
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>My First Web Page</h1>
+<p>My first paragraph.</p>
+
+<script>
+document.write(5 + 6);
+</script>
+
+</body>
+</html>
+
+Използването на document.write() след зареждане на HTML документ ще изтрие целия съществуващ HTML :
+Използването на document.write() след зареждане на HTML документ ще изтрие целия съществуващ HTML :
+
+Методът document.write() трябва да се използва само за тестване.
+
+
+Използване на window.alert() - Падащ прозорец показващ информация 
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>My First Web Page</h1>
+<p>My first paragraph.</p>
+
+<script>
+window.alert(5 + 6);
+</script>
+
+</body>
+</html>
+, може и така 
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>My First Web Page</h1>
+<p>My first paragraph.</p>
+
+<script>
+alert(5 + 6);
+</script>
+
+</body>
+</html>
+
+
+-> Използване на console.log()
+За целите на отстраняване на грешки можете да извикате console.log()метода в браузъра за показване на данни.
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+console.log(5 + 6);
+</script>
+
+</body>
+</html>
+
+-> JavaScript печат
+можете да извикате window.print()метода в браузъра, за да отпечатате съдържанието на текущия прозорец.
+<!DOCTYPE html>
+<html>
+<body>
+
+<button onclick="window.print()">Print this page</button>
+
+</body>
+</html>
+
+-> Изявления на JavaScript
+
+JavaScript програми
+
+
+В езика за програмиране тези инструкции за програмиране се наричат ​​изрази .
+
+-> това е програмен израз цялото 
+document.getElementById("demo").innerHTML = "Hello Dolly.";
+
+-> низ(стринг) "Hello Dolly."
+
+
+! В мрежата може да видите примери без точка и запетая.
+Завършването на изрази с точка и запетая не е задължително, но силно препоръчително.
+JavaScript игнорира множество интервали. Можете да добавите бяло пространство към вашия скрипт, за да го направите по-четлив
+
+-> Дължина на реда на JavaScript и прекъсвания на редовете
+
+За най-добра четливост програмистите често избягват кодови редове, по-дълги от 80 знака.
+
+Ако изразът на JavaScript не се побира на един ред, най-доброто място за прекъсването му е след оператор:
+document.getElementById("demo").innerHTML =
+"Hello Dolly!";
+
+
+-> Кодови блокове на JavaScript
+JavaScript изразите могат да бъдат групирани заедно в кодови блокове, във къдрави скоби {...}.
+
+Целта на кодовите блокове е да дефинират изрази, които да се изпълняват заедно.
+
+Едно място, където ще намерите изрази, групирани заедно в блокове, е във функциите на JavaScript:
+
+function myFunction() {
+  document.getElementById("demo1").innerHTML = "Hello Dolly!";
+  document.getElementById("demo2").innerHTML = "How are you?";
+}
+
+Ключова дума	Описание
+var	Декларира променлива
+let	Декларира блокова променлива
+const	Декларира блокова константа
+if	Маркира блок от изрази, които да бъдат изпълнени при условие
+switch	Маркира блок от изрази, които да бъдат изпълнени в различни случаи
+for	Маркира блок от изрази, които да бъдат изпълнени в цикъл
+function	Декларира функция
+return	Излиза от функция
+try	Внедрява обработка на грешки в блок от изрази
+
+-> Стойности на JavaScript
+
+Синтаксисът на JavaScript дефинира два типа стойности:
+
+1.Фиксирани стойности
+2.Променливи стойности
+Фиксираните стойности се наричат ​​литерали .
+Стойностите на променливите се наричат ​​променливи .
+-> JavaScript литерали
+Двете най-важни синтактични правила за фиксирани стойности са:
+1. Числата се записват със или без десетични знаци:
+10.50
+
+1001
+
+
+2. Низовете са текст, написан в двойни или единични кавички:
+
+"John Doe"
+
+'John Doe'
+-> JS променливи 
+В езика за програмиране променливите се използват за съхраняване на стойности на данни.
+JavaScript използва ключовите думи varи letза constдеклариране на променливи.
+Знакът за равенство се използва за присвояване на стойности на променливи.
+В този пример x е дефиниран като променлива. След това на x се присвоява (даде) стойността 6:
+let x;
+x = 6;
+
+JavaScript използва оператор за присвояване ( =), за да присвои стойности на променливи:
+let x, y;
+x = 5;
+y = 6;
+
+-> JavaScript изрази
+
+Изразът е комбинация от стойности, променливи и оператори, която изчислява до стойност.
+
+Изчислението се нарича оценка.
+
+Например 5 * 10 се оценява на 50:
+
+5 * 10
+
+-> JavaScript ключови думи
+Ключовите думи на JavaScript се използват за идентифициране на действията, които трябва да бъдат извършени.
+
+Ключовата letдума казва на браузъра да създаде променливи:
+
+let x, y;
+x = 5 + 6;
+y = x * 10;
+
+Ключовата varдума също казва на браузъра да създаде променливи:
+var x, y;
+x = 5 + 6;
+y = x * 10;
+
+->! JavaScript е чувствителен към малки и големи букви
+Всички JavaScript идентификатори са чувствителни към главни и малки букви . 
+Променливите lastNameи lastnameса две различни променливи:
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript is Case Sensitive</h2>
+
+<p>Try to change lastName to lastname.</p>
+
+<p id="demo"></p>
+
+<script>
+let lastname, lastName;
+lastName = "Doe";
+lastname = "Peterson";
+document.getElementById("demo").innerHTML = lastName;
+</script>
+
+</body>
+</html>
+
+
+JavaScript и Camel Case 
+Исторически програмистите са използвали различни начини за свързване на няколко думи в едно име на променлива:
+Тирета:
+име, фамилия, главна карта, междуградски.
+
+Тиретата не са разрешени в JavaScript. Те са запазени за изваждане.
+
+Долна черта:
+
+first_name, last_name, master_card, inter_city.
+
+Горен камилски регистър (паскал):
+
+Име, Фамилия, MasterCard, InterCity.
+
+
+Долна камила:
+
+JavaScript програмистите са склонни да използват камилски главни букви, които започват с малка буква:
+име, фамилия, masterCard, interCity.
+Набор от символи на JavaScript
+JavaScript използва набора от знаци Unicode .
+Unicode обхваща (почти) всички знаци, препинателни знаци и символи в света.
+За по-отблизо, моля, проучете нашия Пълен справочник за Unicode .
+
+
+

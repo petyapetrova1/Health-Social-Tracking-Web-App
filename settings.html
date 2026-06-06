@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <title>Health and Finances</title>
+    <link rel="stylesheet" href="settings4.css">
+</head>
+<body>
+    <main class="content">
+        <!-- Навигация -->
+        <ul class="navbar">
+            <div class="search-box">
+                <img src="search-icon-png-1.png">
+                <input type="text" placeholder="Search posts">
+            </div>
+
+            <li id="profile-menu">
+                <a href="javascript:void(0)" onclick="togglePopup(event, 'profile-menu')"><span>👤</span></a>
+                <div class="popup-menu" id="profile-menu-popup">
+                    <a href="editprofile.html">Профил</a>
+                    <a href="#">Настройки</a>
+                    <a href="#">Класация</a>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:void(0)" onclick="togglePopup(event, 'diary-menu')"><span>📖</span></a>
+                <div class="popup-menu" id="diary-menu-popup">
+                    <a href="#">Моят дневник</a>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:void(0)" onclick="togglePopup(event, 'notifications-menu')"><span>🌍</span></a>
+                <div class="popup-menu" id="notifications-menu-popup">
+                    <a href="#">Известия</a>
+                </div>
+            </li>
+
+            <li>
+                <a href="javascript:void(0)" onclick="togglePopup(event, 'favorites-menu')"><span>⭐</span></a>
+                <div class="popup-menu" id="favorites-menu-popup">
+                    <a href="#">Записани публикации</a>
+                </div>
+            </li>
+        </ul>
+
+        <main class="content">
+            <h1 class="settings-title">⚙️Настройки</h1>
+       
+          
+            <div class="settings-container">
+                <h2> Редактиране на профила</h2>
+                <p>Добавете снимка, тя ще бъде видима от всички</p>
+                <!-- ТУК само добавяме aside вътре -->
+                <div class="container">
+                    <!-- Лява секция с късмет -->
+                     <div class = "menu">
+
+                        <div class="account-section">
+                            <a href="accountsettings2.html">
+                                <button>Акаунт</button>
+                            </a>
+                        </div>
+                        
+                        <div class="profile-section">
+                            <a href="editprofile.html">
+                                <button>Профил</button>
+                            </a>
+                        </div>
+                        
+                 
+                    </div>
+             
+           
+              
+              
+                 <div class="profile-image">
+                    <div class="settings">
+                      <a href="#" class="item">
+                        <div class="image-wrapper" onclick="triggerImageInput()">
+                         
+                          <img id="profilePic" src="1000_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" alt="profile image">
+                          
+                          
+                          <div class="overlay" id="overlay">
+                            <button type="button" class="remove-button" id="overlayButton" onclick="handleOverlayClick(event)">Добави</button>
+                          </div>
+                        </div>
+                      </a>
+                  
+                  
+                        </a>
+                        <input type="file" id="imageInput" accept="image/*" style="display: none;" onchange="previewImage(event)">
+            
+          
+          <div class="profile">
+            <div class="name-label">
+                <h4>Jo Nicholson</h4>
+             
+            <span class="profile"></span>
+            <input type="file" id="imageInput" accept="image/*" style="display: none;" onchange="previewImage(event)">
+     
+               
+
+                 
+                 <div class= "vertical"></div>
+
+                 <button type="button" class="submit-button" onclick="saveAndShowResult()">Запази</button>
+             <aside class="right-sidebar">
+          </div>
+     
+
+            </div>
+        </main>
+        
+            
+                
+            </div>
+            
+            
+        </main>
+        
+
+
+    <script>
+const defaultImage = "1000_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg";
+
+
+function triggerImageInput() {
+    document.getElementById("imageInput").click();
+}
+
+
+function previewImage(event) {
+    const input = event.target;
+    const reader = new FileReader();
+
+    reader.onload = function () {
+        document.getElementById("profilePic").src = reader.result;
+        showOverlay("Премахни");
+    };
+
+    if (input.files && input.files[0]) {
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+
+function handleOverlayClick(event) {
+    event.stopPropagation(); 
+
+    const currentSrc = document.getElementById("profilePic").src;
+    if (currentSrc.includes(defaultImage)) {
+        triggerImageInput(); 
+    } else {
+        removeImage(event);  
+    }
+}
+
+
+function removeImage(event) {
+    event.stopPropagation();
+    document.getElementById("profilePic").src = defaultImage;
+    document.getElementById("imageInput").value = "";
+    showOverlay("Добави");
+}
+
+
+function showOverlay(text) {
+    const overlay = document.getElementById("overlay");
+    const btn = document.getElementById("overlayButton");
+    overlay.style.display = "block";
+    btn.textContent = text;
+}
+
+
+window.onload = function () {
+    const currentSrc = document.getElementById("profilePic").src;
+    const isDefault = currentSrc.includes(defaultImage);
+    showOverlay(isDefault ? "Добави" : "Премахни");
+};
+
+
+function saveAndShowResult() {
+            alert("Успешно запазено!"); // за демонстрация
+        }
+</script>
+</body>
+</html>
+
